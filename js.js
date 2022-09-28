@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function(){
     for (let button of buttons){
         button.addEventListener("click", function(){
             if (this.getAttribute("data-type") === "submit"){
-                alert("you clicked submit")
+                checkAnswer();
             } else {
                 let gameType = this.getAttribute("data-type");
                 runGame(gameType);
@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
     runGame("addition");
+
 })
 
 function runGame(gameType){
@@ -30,7 +31,18 @@ function runGame(gameType){
 }
 
 function checkAnswer(){
+    
+    let userAnswer = parseInt(document.getElementById("answer-box").value);
+    let calculatedAnswer = calculateCorrectAnswer();
+    let isCorrect = userAnswer === calculatedAnswer[0];
 
+    if(isCorrect){
+        alert("You are right")
+    } else {
+        alert (`${userAnswer} Is wrong. The correct answer is ${calculatedAnswer[0]} `);
+    }
+
+    runGame(calculatedAnswer[1]);
 }
 
 function calculateCorrectAnswer(){
@@ -43,7 +55,7 @@ function calculateCorrectAnswer(){
         return [operand1 + operand2, "addition"]
     } else {
         alert(`Unemplemented operator ${operator}`);
-        throw `Unemplemented operator ${operator}. Aborting`
+        throw (`Unemplemented operator ${operator}. Aborting`)
     }
 }
 
@@ -63,26 +75,26 @@ function disaplayAdditionQuestion(operand1, operand2){
 
 }
 
-function disaplaySubtractQuestion(){
+// function disaplaySubtractQuestion(){
 
-    document.getElementById("operand1").textContent = operand1;
-    document.getElementById("operand2").textContent = operand2;
-    document.getElementById("operator").textContent = "-";
+//     document.getElementById("operand1").textContent = operand1;
+//     document.getElementById("operand2").textContent = operand2;
+//     document.getElementById("operator").textContent = "-";
 
-}
+// }
 
-function disaplayMultiplyQuestion(){
+// function disaplayMultiplyQuestion(){
 
-    document.getElementById("operand1").textContent = operand1;
-    document.getElementById("operand2").textContent = operand2;
-    document.getElementById("operator").textContent = "x";
+//     document.getElementById("operand1").textContent = operand1;
+//     document.getElementById("operand2").textContent = operand2;
+//     document.getElementById("operator").textContent = "x";
 
-}
+// }
 
-function disaplayDivideQuestion(){
+// function disaplayDivideQuestion(){
 
-    document.getElementById("operand1").textContent = operand1;
-    document.getElementById("operand2").textContent = operand2;
-    document.getElementById("operator").textContent = "÷";
+//     document.getElementById("operand1").textContent = operand1;
+//     document.getElementById("operand2").textContent = operand2;
+//     document.getElementById("operator").textContent = "÷";
 
-}
+// }
