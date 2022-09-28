@@ -13,34 +13,36 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 })
 
-// runGame(){
+function runGame(){
 
-// }
+    let num1 = Math.floor(Math.random() * 25) +1;
+    let num2 = Math.floor(Math.random() * 25) +1;
+}
 
-// checkAnswer(){
+function checkAnswer(){
 
-// }
+}
 
-// calculateCorrectAnswer(){
+function calculateCorrectAnswer(){
     
-// }
+}
 
-// incrementScore(){
+function incrementScore(){
     
-// }
+}
 
-// incrementWrongAnswer(){
+function incrementWrongAnswer(){
     
-// }
+}
 
-// disaplayAdditionQuestion(){
+function disaplayAdditionQuestion(){
     
-// }
+}
 
-// disaplaySubtractQuestion(){
+function disaplaySubtractQuestion(){
     
-// }
+}
 
-// disaplayMultiplyQuestion(){
+function disaplayMultiplyQuestion(){
     
-// }
+}
